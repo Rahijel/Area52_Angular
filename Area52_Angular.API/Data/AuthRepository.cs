@@ -78,7 +78,7 @@ namespace Area52_Angular.API.Data
                 return true;
             }
 
-            return true;
+            return false;
         }
     }
 }

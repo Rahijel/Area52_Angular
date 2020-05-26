@@ -22,6 +22,7 @@ namespace Area52_Angular.API.Controllers
 
         }
         
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
