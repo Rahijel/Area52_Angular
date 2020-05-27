@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Area52_Angular.API.Data;
 using Area52_Angular.API.Helpers;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -41,6 +42,7 @@ namespace Area52_Angular.API
                 Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             services.AddCors();
+            services.AddAutoMapper(typeof(BookshelfRepository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IBookshelfRepository, BookshelfRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

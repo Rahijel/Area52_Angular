@@ -1,7 +1,6 @@
 import {Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { BookListComponent } from './book-list/book-list.component';
-import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
 import { AuthGuard } from './_guards/auth.guard';
 
@@ -13,7 +12,6 @@ export const appRoutes: Routes = [
         canActivate: [AuthGuard],
         children: [
             {path: 'members', component: BookListComponent},
-            {path: 'messages', component: MessagesComponent},
             {path: 'lists', component: ListsComponent},
         ]
     },

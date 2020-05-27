@@ -15,7 +15,6 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
 import { BookListComponent } from './book-list/book-list.component';
 import { ListsComponent } from './lists/lists.component';
-import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 
 @NgModule({
@@ -25,8 +24,7 @@ import { appRoutes } from './routes';
       HomeComponent,
       RegisterComponent,
       BookListComponent,
-      ListsComponent,
-      MessagesComponent
+      ListsComponent
    ],
    imports: [
       BrowserModule,
