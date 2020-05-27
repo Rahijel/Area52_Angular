@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpErrorResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { error } from 'protractor';
 import { throwError } from 'rxjs';
 
 @Injectable()
@@ -11,7 +10,6 @@ export class ErrorInterceptor implements HttpInterceptor {
     next: import('@angular/common/http').HttpHandler
   ): import('rxjs').Observable<import('@angular/common/http').HttpEvent<any>> {
     return next.handle(req).pipe(
-        // tslint:disable-next-line: no-shadowed-variable
         catchError(error => {
             if (error.status === 401) {
                 return throwError(error.statusText);
@@ -25,7 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                 const serverError = error.error;
                 let modelStateErrors = '';
                 if (serverError.errors && typeof serverError.errors === 'object') {
-                    for (const key of serverError.errors) {
+                    for (const key in serverError.errors) {
                         if (serverError.errors[key]) {
                             modelStateErrors += serverError.errors[key] + '\n';
                         }
