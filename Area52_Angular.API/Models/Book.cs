@@ -8,7 +8,7 @@ namespace Area52_Angular.API.Models
         public string CoverUrl { get; set; }
         public string Titel { get; set; }
         public string Author { get; set; }
-        public DateTime FinishedTime { get; set; }
+        public DateTime FinishedDate { get; set; }
         public bool Favorite { get; set; }
         public string Notes { get; set; }     
     }
